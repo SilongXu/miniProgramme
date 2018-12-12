@@ -68,7 +68,7 @@ Page({
             //用户点击的是允许
             this.getUserInfo();
         } else {
-
+            console.log('拒绝')
         }
     },
     /**

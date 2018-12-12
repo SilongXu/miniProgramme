@@ -30,19 +30,23 @@
     font-weight: bold;
     margin-left: 10rpx;
 }
-.collection_share_container{
+
+.collection_share_container {
     position: relative;
 }
-.collection_share{
+
+.collection_share {
     float: right;
     margin-right: 50rpx;
 }
+
 .collection_share image {
     width: 90rpx;
     height: 90rpx;
     margin-right: 20rpx;
 }
-.line{
+
+.line {
     width: 90%;
     height: 1rpx;
     background: #eee;
@@ -51,16 +55,19 @@
     left: 5%;
     z-index: -1;
 }
-button{
+
+button {
     width: 280rpx;
     height: 80rpx;
 }
-.content{
+
+.content {
     margin-top: 20rpx;
     font-size: 32rpx;
     text-indent: 32rpx;
 }
-.musicImg{
+
+.musicImg {
     width: 60rpx;
     height: 60rpx;
     position: absolute;

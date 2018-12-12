@@ -35,19 +35,19 @@ Page({
         console.log(detailStorage);
 
         //在缓存中初始化空对象
-        if (!detailStorage){
+        if (!detailStorage) {
             wx.setStorageSync('isCollected', {})
         }
 
         //判断用户是否收藏
-        if(detailStorage[index]){//收藏过
+        if (detailStorage[index]) { //收藏过
             this.setData({
                 isCollected: true
             })
         }
 
         //监听音乐播放
-        wx.onBackgroundAudioPause(()=>{
+        wx.onBackgroundAudioPause(() => {
             console.log('音乐播放');
             this.setData({
                 isMusicPlay: true
@@ -58,7 +58,7 @@ Page({
         })
 
         //判断音乐是否在播放
-        if(appDatas.data.isPlay && appDatas.data.pageIndex === index){
+        if (appDatas.data.isPlay && appDatas.data.pageIndex === index) {
             //修改isMusicPlay的状态值
             this.setData({
                 isMusicPlay: true
@@ -66,7 +66,7 @@ Page({
         };
 
         //监听音乐暂停
-        wx.onBackgroundAudioPlay(()=>{
+        wx.onBackgroundAudioPlay(() => {
             console.log('音乐暂停');
             this.setData({
                 isMusicPlay: false
@@ -116,7 +116,7 @@ Page({
         })
 
     },
-    handleMusicPlay(){
+    handleMusicPlay() {
         //处理音乐播放
         let isMusicPlay = !this.data.isMusicPlay;
         this.setData({
@@ -124,24 +124,27 @@ Page({
         });
 
         //控制音乐播放
-        if(isMusicPlay){
+        if (isMusicPlay) {
             //播放音乐
-            let { dataUrl, title} = this.data.detailObj.music;
+            let {
+                dataUrl,
+                title
+            } = this.data.detailObj.music;
             wx.playBackgroundAudio({
                 dataUrl,
                 title
             })
-        }else{
+        } else {
             //暂停音乐
             wx.pauseBackgroundAudio()
         }
 
     },
     //处理点击分享功能
-    handleShare(){
+    handleShare() {
         wx.showActionSheet({
             itemList: [
-                '分享到朋友圈','分享到QQ空间','分享到微博'
+                '分享到朋友圈', '分享到QQ空间', '分享到微博'
             ],
         })
     },
